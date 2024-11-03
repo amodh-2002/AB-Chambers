@@ -16,38 +16,48 @@ const Cookie: React.FC = () => {
       }
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Prevent scrolling when component mounts and cookie is not accepted
+    if (!localStorage.getItem("cookieAgreed")) {
+      document.body.style.overflow = 'hidden';
+    }
+
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+      // Reset overflow when component unmounts
+      document.body.style.overflow = 'unset';
     };
   }, []);
 
   const handleAgree = () => {
     localStorage.setItem("cookieAgreed", "true");
     setIsVisible(false);
+    // Re-enable scrolling
+    document.body.style.overflow = 'unset';
   };
 
   const handleDisagree = () => {
+    // Re-enable scrolling before redirect
+    document.body.style.overflow = 'unset';
     window.location.href = "https://www.google.com";
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 overflow-y-auto">
-      <div className="bg-white rounded-lg w-full max-w-md mx-auto p-6 mt-12">
-        {" "}
-        {/* Add mt-12 here */}
-        <h2 className="text-xl font-bold mb-4">Cookie Disclaimer</h2>
-        <p className="mb-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4 z-50">
+      <div className="bg-white rounded-lg w-full max-w-md mx-auto p-4 mb-4 max-h-[70vh] overflow-y-auto">
+        <h2 className="text-lg font-bold mb-3">Cookie Disclaimer</h2>
+        <p className="mb-3 text-sm">
           As per the Bar Council Of India, AB Chambers is not permitted to
           solicit work or advertising in any manner to the general public.
           Therefore, it is constrained to provide any further information on
           this website.
         </p>
-        <p className="mb-4">
+        <p className="mb-3 text-sm">
           By clicking on "I AGREE" below, the user acknowledges the following:
         </p>
-        <ul className="list-disc list-inside mb-4">
+        <ul className="list-disc list-inside mb-3 text-sm space-y-2">
           <li>
             There has been no solicitation, advertisement, or any form of direct
             or persuasive interaction or inducement towards the user by AB
@@ -65,20 +75,20 @@ const Cookie: React.FC = () => {
             completely of the user's volition.
           </li>
         </ul>
-        <p className="mb-4">
+        <p className="mb-4 text-sm">
           The information provided should not be interpreted as legal advice.
           For any legal concerns, users should seek independent legal advice.
         </p>
-        <div className="flex justify-end space-x-4 mt-4">
+        <div className="flex justify-end space-x-3">
           <button
             onClick={handleDisagree}
-            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+            className="px-3 py-1.5 bg-red-500 text-white rounded hover:bg-red-600 text-sm"
           >
             Disagree
           </button>
           <button
             onClick={handleAgree}
-            className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+            className="px-3 py-1.5 bg-green-500 text-white rounded hover:bg-green-600 text-sm"
           >
             I Agree
           </button>
