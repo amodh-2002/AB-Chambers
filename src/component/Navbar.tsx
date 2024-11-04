@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const linkClass = (path: string) =>
-    `px-4 py-2 text-[1.1rem] ${
+    `px-2 py-2 text-[0.95rem] whitespace-nowrap ${
       isActive(path)
         ? "text-blue-600 font-semibold"
         : "text-gray-700 hover:text-gray-900"
@@ -43,14 +43,14 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between  h-20">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="flex justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-3xl font-bold text-gray-800">
+            <Link to="/" className="text-2xl lg:text-3xl font-bold text-gray-800">
               ABChambers
             </Link>
           </div>
-          <div className="hidden lg:flex items-center ml-10">
+          <div className="hidden lg:flex items-center space-x-1 xl:space-x-4">
             <Link to="/" className={linkClass("/")}>
               Home
             </Link>
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
               >
                 About Us
                 <svg
-                  className="w-4 h-4 ml-1 inline-block"
+                  className="w-3 h-3 ml-1 inline-block"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
