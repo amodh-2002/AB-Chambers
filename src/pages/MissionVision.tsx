@@ -2,14 +2,15 @@ import React from "react";
 
 const MissionVision: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8 pt-24"> {/* Added pt-24 for top padding */}
+    <div className="container mx-auto px-4 py-8 pt-24">
+      {" "}
+      {/* Added pt-24 for top padding */}
       <h1 className="text-3xl font-bold text-center mb-8">
         Mission and Vision
       </h1>
-
       <div className="grid md:grid-cols-2 gap-8">
         {/* Mission Card */}
-        <div className="bg-white shadow-lg rounded-lg p-6">
+        <div className="bg-white shadow-lg rounded-lg p-6 border-2 border-gray-200 hover:border-gray-300 transition-colors duration-300">
           <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
           <p className="text-gray-700">
             To serve as steadfast guardians of justice, committed to upholding
@@ -21,7 +22,7 @@ const MissionVision: React.FC = () => {
         </div>
 
         {/* Vision Card */}
-        <div className="bg-white shadow-lg rounded-lg p-6">
+        <div className="bg-white shadow-lg rounded-lg p-6 border-2 border-gray-200 hover:border-gray-300 transition-colors duration-300">
           <h2 className="text-2xl font-semibold mb-4">Our Vision</h2>
           <p className="text-gray-700">
             Our vision is to be a dynamic force in the legal realm, leading by

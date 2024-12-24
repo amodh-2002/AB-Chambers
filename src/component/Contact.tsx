@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-12">
           <div className="lg:w-1/2">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            <p className="mb-4"><strong>Address:</strong> AB Chambers, [Full Address]</p>
+            <p className="mb-4"><strong>Address:</strong> Chambers, [Full Address]</p>
             <p className="mb-4"><strong>Phone:</strong> [Phone Number]</p>
             <p className="mb-8"><strong>Email:</strong> [Email Address]</p>
             

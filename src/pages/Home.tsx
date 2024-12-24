@@ -31,7 +31,7 @@ const Home: React.FC = () => {
             Schedule a Consultation
           </Link>
           <p className="mt-6 text-lg font-light">
-            AB Chambers – Your Trusted Advocates in the Pursuit of Justice
+            Chambers – Your Trusted Advocates in the Pursuit of Justice
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
           <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
             <p className="mb-4">
-              AB Chambers is a premier law firm dedicated to providing top-notch
+              Chambers is a premier law firm dedicated to providing top-notch
               legal services across various practice areas. Our team of
               experienced attorneys is committed to delivering personalized
               legal solutions with the highest level of integrity and
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
           <div className="md:w-1/2">
             <img
               src="/conf1.jpg"
-              alt="AB Chambers Team"
+              alt="Chambers Team"
               className="rounded-lg shadow-lg"
             />
           </div>
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
       <div className="py-16 bg-white max-w-7xl mx-auto ">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Why AB Chambers?
+            Why Chambers?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">

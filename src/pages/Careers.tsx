@@ -6,7 +6,7 @@ const Careers: React.FC = () => {
       <h1 className="text-4xl font-bold my-14 text-center">CAREERS</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white shadow-md rounded-lg p-6">
+        <div className="bg-white shadow-md rounded-lg p-6 border-2 border-gray-200 hover:border-gray-300 transition-colors duration-300">
           <h2 className="text-2xl font-semibold mb-4">
             Internship Opportunities
           </h2>
@@ -18,7 +18,7 @@ const Careers: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white shadow-md rounded-lg p-6">
+        <div className="bg-white shadow-md rounded-lg p-6 border-2 border-gray-200 hover:border-gray-300 transition-colors duration-300">
           <h2 className="text-2xl font-semibold mb-4">
             Retainership Positions
           </h2>

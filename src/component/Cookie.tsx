@@ -19,13 +19,13 @@ const Cookie: React.FC = () => {
 
     // Prevent scrolling when component mounts and cookie is not accepted
     if (!localStorage.getItem("cookieAgreed")) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       // Reset overflow when component unmounts
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, []);
 
@@ -33,12 +33,12 @@ const Cookie: React.FC = () => {
     localStorage.setItem("cookieAgreed", "true");
     setIsVisible(false);
     // Re-enable scrolling
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   const handleDisagree = () => {
     // Re-enable scrolling before redirect
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
     window.location.href = "https://www.google.com";
   };
 
@@ -49,10 +49,9 @@ const Cookie: React.FC = () => {
       <div className="bg-white rounded-lg w-full max-w-md mx-auto p-4 mb-4 max-h-[70vh] overflow-y-auto">
         <h2 className="text-lg font-bold mb-3">Cookie Disclaimer</h2>
         <p className="mb-3 text-sm">
-          As per the Bar Council Of India, AB Chambers is not permitted to
-          solicit work or advertising in any manner to the general public.
-          Therefore, it is constrained to provide any further information on
-          this website.
+          As per the Bar Council Of India, Chambers is not permitted to solicit
+          work or advertising in any manner to the general public. Therefore, it
+          is constrained to provide any further information on this website.
         </p>
         <p className="mb-3 text-sm">
           By clicking on "I AGREE" below, the user acknowledges the following:
@@ -64,7 +63,7 @@ const Cookie: React.FC = () => {
             Chambers or its members.
           </li>
           <li>
-            The user willfully wishes to gain more information about AB Chambers
+            The user willfully wishes to gain more information about Chambers
             Office Bengaluru, its contact details, its area of expertise and
             practice, and its associates, for the user's own information and
             use.

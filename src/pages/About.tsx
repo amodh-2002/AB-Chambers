@@ -6,7 +6,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ heading, content }) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:-translate-y-1">
+  <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:-translate-y-1 border-2 border-gray-200">
     <div className="p-6">
       <h3 className="text-xl font-semibold text-gray-800 mb-2">{heading}</h3>
       <p className="text-gray-600">{content}</p>
@@ -24,7 +24,7 @@ const About: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <Card
           heading="Our Firm"
-          content="AB Chamber is a leading full service/multi-disciplinary Indian law firm with its principal office in Bangalore. The firm since has expanded to legal experts from various fields of legal expertise such as bankruptcy law, litigation & dispute resolution, maritime law, real estate & property law, foreign investment assistance, banking & financial law and intellectual property law."
+          content="Chamber is a leading full service/multi-disciplinary Indian law firm with its principal office in Bangalore. The firm since has expanded to legal experts from various fields of legal expertise such as bankruptcy law, litigation & dispute resolution, maritime law, real estate & property law, foreign investment assistance, banking & financial law and intellectual property law."
         />
 
         <Card
