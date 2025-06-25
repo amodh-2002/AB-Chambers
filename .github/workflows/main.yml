@@ -2,11 +2,9 @@ name: SonarCloud Analysis
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
   push:
-    branches:
-      - main  # Optional: also run on push to main
+    branches: [ main ]
 
 jobs:
   sonarqube:
@@ -24,24 +22,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: echo "Running tests..."
-        # Optional: replace with your actual test command (e.g., `npm run test`)
-
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
+      - name: Install SonarCloud Scanner
+        run: npm install -g sonar-scanner@latest
 
       - name: Run SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          npx sonar-scanner \
+          sonar-scanner \
             -Dsonar.projectKey=amodh-2002_testing-react-router-dom \
             -Dsonar.organization=amodh-2002 \
             -Dsonar.sources=src \
-            -Dsonar.exclusions=**/*.test.js,**/*.spec.js,node_modules/**,dist/** \
+            -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-            -Dsonar.login=$SONAR_TOKEN
+            -Dsonar.exclusions=**/*.test.js,**/*.spec.js,node_modules/**,dist/**
