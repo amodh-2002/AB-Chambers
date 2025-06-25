@@ -36,3 +36,4 @@ jobs:
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
             -Dsonar.exclusions=**/*.test.js,**/*.spec.js,node_modules/**,dist/**
+            -Dsonar.host.url=https://sonarcloud.io
